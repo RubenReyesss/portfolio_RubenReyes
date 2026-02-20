@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%237c3aed%22>R</text></svg>">
+  <title>Rubén Reyes Parra | Junior Data & AI Developer</title>
+  <meta name="description"
+    content="Portfolio de Rubén Reyes Parra, Junior Data & AI Developer especializado en LLMs, RAG y Big Data. Descubre soluciones de IA escalables." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rrp.dev/" />
+  <meta property="og:title" content="Rubén Reyes Parra | Junior Data & AI Developer" />
+  <meta property="og:description"
+    content="Especialista en LLMs, RAG y Big Data. Construyendo el futuro de la IA aplicada." />
+  <meta property="og:image" content="https://rrp.dev/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://rrp.dev/" />
+  <meta property="twitter:title" content="Rubén Reyes Parra | Junior Data & AI Developer" />
+  <meta property="twitter:description"
+    content="Especialista en LLMs, RAG y Big Data. Construyendo el futuro de la IA aplicada." />
+  <meta property="twitter:image" content="https://rrp.dev/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --accent-primary: #7c3aed;
+      --accent-secondary: #06b6d4;
+      --bg-dark: #020204;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: #e2e8f0;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Ocultar cursor real solo si no es táctil */
+    @media (pointer: fine) {
+      body {
+        cursor: none;
+      }
+    }
+
+    @media (pointer: coarse) {
+
+      #custom-cursor,
+      #cursor-glow {
+        display: none !important;
+      }
+    }
+
+    /* Custom Cursor */
+    #custom-cursor {
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: difference;
+      transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s ease;
+    }
+
+    #custom-cursor.hovered {
+      transform: scale(6);
+    }
+
+    #cursor-glow {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Scanline Effect */
+    .scanline {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, rgba(6, 182, 212, 0.2), transparent);
+      position: fixed;
+      left: 0;
+      z-index: 50;
+      pointer-events: none;
+      animation: scan 4s linear infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        top: -10%;
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        top: 110%;
+        opacity: 0;
+      }
+    }
+
+    /* Glowing Borders Animation */
+    @keyframes rotate-bg {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animated-border-box {
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .animated-border-box::before {
+      content: '';
+      position: absolute;
+      z-index: -2;
+      left: -50%;
+      top: -50%;
+      width: 200%;
+      height: 200%;
+      background-color: #1a1a1a;
+      background-repeat: no-repeat;
+      background-size: 50% 50%, 50% 50%;
+      background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+      background-image: linear-gradient(var(--accent-primary), var(--accent-primary)), linear-gradient(var(--accent-secondary), var(--accent-secondary));
+      animation: rotate-bg 4s linear infinite;
+    }
+
+    .animated-border-box::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 1px;
+      top: 1px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      background: var(--bg-dark);
+    }
+
+    /* Float Animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="custom-cursor"></div>
+  <div id="cursor-glow"></div>
+  <div class="scanline"></div>
+  <div id="progress-bar"></div>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <script>
+    const cursor = document.getElementById('custom-cursor');
+    const glow = document.getElementById('cursor-glow');
+
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    // Cursor Morphing
+    const addCursorHover = () => {
+      document.querySelectorAll('a, button, .interactive').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+      });
+    };
+
+    addCursorHover();
+    // Re-bind on dynamic content changes if necessary
+    const observer = new MutationObserver(addCursorHover);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Prevent multi-touch zoom (pinch zoom)
+    document.addEventListener('touchstart', (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    // Simple parallax on scroll
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      document.querySelectorAll('.parallax-slow').forEach(el => {
+        el.style.transform = `translateY(${scrolled * 0.1}px)`;
+      });
+    });
+  </script>
+</body>
+
+</html>
